@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <!-- ✅ Admin Navigation Bar -->
+    <nav>
+        <a href="admin.html">Edit Products</a>
+        <a href="reports.html">Report Generation</a>
+        <button id="logout-btn">Logout</button> <!-- ✅ Logout button -->
+    </nav>
+
+    <div id="admin-panel" style="display:none;">
+        <h2 style="color: black;">Admin Product Management</h2>
+
+        <form id="add-product-form">
+            <input type="text" id="category" placeholder="Category" required>
+            <input type="number" id="credit" placeholder="Credit" required>
+            <input type="text" id="img-url" placeholder="Image URL" required>
+            <input type="text" id="name" placeholder="Product Name" required>
+            <input type="number" id="price" placeholder="Price" required>
+            <input type="number" id="grams" placeholder="Grams" required> 
+            <input type="number" id="stock" placeholder="Stock Quantity" required>
+            <select id="stock-status">
+                <option value="visible">Visible</option>
+                <option value="hidden">Hidden</option>
+            </select>
+            <button type="submit">Add Product</button>
+        </form>
+
+        <div id="products-container"></div>
+        <button id="next-btn">Next</button>
+    </div>
+
+    <script src="../js/admin.js" type="module" defer></script>
+</body>
+</html>

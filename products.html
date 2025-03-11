@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <h1>Snack Store 🍿</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Cart 🛒</a>
+            <div id="user-section">
+                <a href="login.html" id="login-link">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="filter-container">
+            <input type="text" id="search-bar" placeholder="Search for products..." oninput="filterProducts()">
+            <select id="category-filter" onchange="filterProducts()">
+                <option value="all">All Categories</option>
+            </select>
+        </div>
+        
+
+        <div class="product-list"></div>  <!-- Products will be loaded here -->
+    </main>
+
+    <script type="module" src="js/products.js"></script>
+
+    <!-- Simple Footer -->
+    <footer>
+        <p>&copy; 2025 Snack Store 🍿 | All rights reserved</p>
+    </footer>
+
+    <script type="module" src="js/auth.js" defer></script>
+
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("preloader").style.display = "none";
+        });
+
+    
+
+    </script>
+
+</body>
+</html>

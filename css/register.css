@@ -1,0 +1,170 @@
+/* Apply a background image to all pages */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: white; /* Text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/snacks.webp') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.5; /* Adjust for dullness */
+    z-index: -1;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+
+/* Registration Form */
+#register-form {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    width: 320px;
+}
+
+/* Form Labels */
+label {
+    font-size: 1.1em;
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+    color: #ffcc00; /* Gold color */
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+/* Hide increment/decrement arrows in number inputs */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield; /* Other browsers */
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Register Button */
+button {
+    background: #ff9800;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Toast Notification Styles */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors for Different Notification Types */
+.toast.success { background-color: #28a745; } /* Green */
+.toast.warning { background-color: #ffc107; } /* Yellow */
+.toast.error { background-color: #dc3545; } /* Red */

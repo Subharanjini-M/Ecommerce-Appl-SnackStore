@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/snackit.png">
+    <title>Shopping Cart - Snack Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/cart.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+    <header>
+        <h1>Snack Store 🍿</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Shop</a>
+            <div id="user-section">
+                <a href="login.html" id="login-link">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h2>Your Cart 🛒</h2>
+        <div id="cart-items"></div>
+
+        <div class="cart-summary">
+            <h3>Subtotal: <span id="subtotal">₹0.00</span></h3>
+            <button id="checkout">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Snack Store 🍿 | All rights reserved</p>
+    </footer>
+
+
+    <script>
+        window.addEventListener("load", function () {
+            document.getElementById("preloader").style.display = "none";
+        });
+    </script>
+    
+
+</body>
+</html>
