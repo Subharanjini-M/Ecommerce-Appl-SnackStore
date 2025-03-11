@@ -162,16 +162,39 @@ nav a:hover {
 
 /* Product List Layout - Smaller Boxes */
 /* Product List - Force Grid to Row Layout */
-.product-list {
+
+/* .product-list {
     display: grid;
-    grid-auto-flow: column; /* Ensure items are placed in a single row */
-    grid-auto-columns: minmax(180px, auto); /* Ensure proper sizing */
-    gap: 15px; /* Space between items */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    grid-auto-flow: column; 
+    grid-auto-columns: minmax(180px, auto);
+    gap: 15px; 
+    overflow-x: auto; 
     padding: 10px;
     margin-top: 10px;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap; 
+} */
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 15px; /* Space between items */
+    padding: 10px;
+    margin-top: 10px;
 }
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-list {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
+    }
+}
+
 
 /* Product Card */
 .product {
